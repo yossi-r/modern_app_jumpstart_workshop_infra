@@ -4,16 +4,16 @@ nginx-ingress:
     appprotect:
       enable: true
     appprotectdos:
-      enable: true
+      enable: false
     enableSnippets: true
     image:
-      repository: ghcr.io/<GITHUB_USER>/nginx-plus-ingress
-      tag: <TAG>
+      repository: private-registry.nginx.com/nginx-ic-nap/nginx-plus-ingress
+      tag: 2.3.0
     nginxplus: true
     nginxStatus:
       allowCidrs: 0.0.0.0/0
       port: 9000
     serviceAccount:
-      imagePullSecretName: ghcr
+      imagePullSecretName: regcred
   prometheus:
     create: true
